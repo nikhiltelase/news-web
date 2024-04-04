@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green News</title>
+    <link rel="stylesheet" href="static/style.css">
+    <!-- icon link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!--    favion_link-->
+     <link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <main class="main">
+        <!-- -------------------------header----------------------- -->
+        <header class="header">
+            <div class="header-top">
+                <div class="logo">
+                    <img src="static/images/logo.png" alt="green news logo">
+                </div>
+                <div class="search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search for Topics">
+                </div>
+            </div>
+            
+        </header>
+        <!-- -----------------------------left-sidebar--------------------------------- -->
+        <aside class="left-sidebar">
+            <!-- top -->
+            <div class="container">
+                <h1 class="heding">Top Headlines</h1>
+                <div>
+                    <!-- i am using jinja2 templetes for genrating html content -->
+                    <ul class="">
+                    {% for item in current_news %}
+                        <li class="sidebar-content">
+                            <a href="{{ item.get('url') }}">{{ item.get("title") }}</a>
+                        </li>  
+                    {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <!-- Business -->
+            <div class="">
+                <h1 class="heding">Business Headlines</h1>
+                <div>
+                    <!-- i am using jinja2 templetes for genrating html content -->
+                    <ul class="">
+                    {% for item in business_news %}
+                        <li class="sidebar-content">
+                            <a href="{{ item.get('url') }}">{{ item.get("title") }}</a>
+                        </li>  
+                    {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <!-- Entertainment -->
+            <div class="">
+                <h1 class="heding">Entertainment Headlines</h1>
+                <div>
+                    <!-- i am using jinja2 templetes for genrating html content -->
+                    <ul class="">
+                    {% for item in entertainment_news %}
+                        <li class="sidebar-content">
+                            <a href="{{ item.get('url') }}">{{ item.get("title") }}</a>
+                        </li>  
+                    {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <!-- health -->
+            <div class="">
+                <h1 class="heding">Health Headlines</h1>
+                <div>
+                    <!-- i am using jinja2 templetes for genrating html content -->
+                    <ul class="">
+                    {% for item in health_news %}
+                        <li class="sidebar-content">
+                            <a href="{{ item.get('url') }}">{{ item.get("title") }}</a>
+                        </li>  
+                    {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <!-- science -->
+            <div class="">
+                <!-- i am using jinja2 templetes for genrating html content -->
+                <h1 class="heding">Science Headlines</h1>
+                <div>
+                    <ul class="">
+                    {% for item in science_news %}
+                        <li class="sidebar-content">
+                            <a href="{{ item.get('url') }}">{{ item.get("title") }}</a>
+                        </li>  
+                    {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <!-- sports -->
+            <div class="">
+                <!-- i am using jinja2 templetes for genrating html content -->
+                <h1 class="heding">Sports Headlines</h1>
+                <div>
+                    <ul class="">
+                    {% for item in sports_news %}
+                        <li class="sidebar-content">
+                            <a href="{{ item.get('url') }}">{{ item.get("title") }}</a>
+                        </li>  
+                    {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <!-- technology -->
+            <div class="">
+                <!-- i am using jinja2 templetes for genrating html content -->
+                <h1 class="heding">Technology Headlines</h1>
+                <div>
+                    <ul class="">
+                    {% for item in technology_news %}
+                        <li class="sidebar-content">
+                            <a href="{{ item.get('url') }}">{{ item.get("title") }}</a>
+                        </li>  
+                    {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            
+        </aside>
+        <!-- -------------------------------All News------------------------------------ -->
+        
+        <div class="all_news">
+            <!-- -------links------- -->
+            <section class="links-setion">
+                <div class="links">
+                    <nav class="category">
+                        <a href="#Current">Top News</a>
+                        <a href="#business">Business</a>
+                        <a href="#entertainment">Entertainment</a>
+                        <a href="#health">Health</a>
+                        <a href="#science">Science</a>
+                        <a href="#sports">Sports</a>
+                        <a href="#technology">Technology</a>
+                    </nav>
+                </div>
+            </section>
+             <!-- ------Current Top News------>
+             <section id="Current" class="Current-section">
+                <div>      
+                    <h1 class="heding">------------Top News -----------</h1>
+                    <!-- i am using jinja2 templetes for genrating html content -->
+                    <div class="news_container">
+                        {% for item in current_news %}
+                        <a href="{{item.get('url')}}">
+                            <div class="content">
+                                <h3>{{item.get("title")}}</h3>
+                                <br>
+                                <p>{{item.get("description")}}</p>
+                                <!-- <p>Content: {{item.get("content")}}</p> -->
+                                {% if item.get('urlToImage') is none %}
+                                    <img src="static/images/logo.png" alt="">
+                                {% else %}
+                                    <img src="{{item.get('urlToImage')}}" alt="">
+                                {% endif %} 
+                                <p>publishedAt:{{item.get("publishedAt")}}</p>
+                            </div>
+                        </a>         
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+            <hr>
+                <!-- -------Business-section-------->
+            <section id="business" class="business-section">
+                <div>      
+                    <h1 class="heding">------------Business-----------</h1>
+                    <!-- i am using jinja2 templetes for genrating html content -->
+                    <div class="news_container">
+                        {% for item in business_news %}
+                        <a href="{{item.get('url')}}">
+                            <div class="content">
+                                <h3>{{item.get("title")}}</h3>
+                                <br>
+                                <p>{{item.get("description")}}</p>
+                                <!-- <p>Content: {{item.get("content")}}</p> -->
+                                {% if item.get('urlToImage') is none %}
+                                    <img src="static/images/logo.png" alt="">
+                                {% else %}
+                                    <img src="{{item.get('urlToImage')}}" alt="">
+                                {% endif %} 
+                                <p>publishedAt:{{item.get("publishedAt")}}</p>
+                            </div>
+                        </a>         
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+            <hr>
+            <!-- --------entertainment-section------>
+            <section id="entertainment" class="entertainment-section">
+                <div>      
+                    <h1 class="heding">------------Entertainment-----------</h1>
+                    <!-- i am using jinja2 templetes for genrating html content -->
+                    <div class="news_container">
+                        {% for item in entertainment_news %}
+                        <a href="{{item.get('url')}}">
+                            <div class="content">
+                                <h3>{{item.get("title")}}</h3>
+                                <br>
+                                <p>{{item.get("description")}}</p>
+                                <!-- <p>Content: {{item.get("content")}}</p> -->
+                                {% if item.get('urlToImage') is none %}
+                                    <img src="static/images/logo.png" alt="">
+                                {% else %}
+                                    <img src="{{item.get('urlToImage')}}" alt="">
+                                {% endif %} 
+                                <p>publishedAt:{{item.get("publishedAt")}}</p>
+                            </div>
+                        </a>         
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+            <hr>
+            <!-- -------health-section------->
+            <section id="health" class="health-section">
+                <div>      
+                    <h1 class="heding">------------Health-----------</h1>
+                    <!-- i am using jinja2 templetes for genrating html content -->
+                    <div class="news_container">
+                        {% for item in health_news %}
+                        <a href="{{item.get('url')}}">
+                            <div class="content">
+                                <h3>{{item.get("title")}}</h3>
+                                <br>
+                                <p>{{item.get("description")}}</p>
+                                <!-- <p>Content: {{item.get("content")}}</p> -->
+                                {% if item.get('urlToImage') is none %}
+                                    <img src="static/images/logo.png" alt="">
+                                {% else %}
+                                    <img src="{{item.get('urlToImage')}}" alt="">
+                                {% endif %} 
+                                <p>publishedAt:{{item.get("publishedAt")}}</p>
+                            </div>
+                        </a>         
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+            <hr>
+            <!-- ------science-section------- -->
+            <section id="science" class="science-section">
+                <div>      
+                    <h1 class="heding">------------Science-----------</h1>
+                    <!-- i am using jinja2 templetes for genrating html content -->
+                    <div class="news_container">
+                        {% for item in science_news %}
+                        <a href="{{item.get('url')}}">
+                            <div class="content">
+                                <h3>{{item.get("title")}}</h3>
+                                <br>
+                                <p>{{item.get("description")}}</p>
+                                <!-- <p>Content: {{item.get("content")}}</p> -->
+                                {% if item.get('urlToImage') is none %}
+                                    <img src="static/images/logo.png" alt="">
+                                {% else %}
+                                    <img src="{{item.get('urlToImage')}}" alt="">
+                                {% endif %} 
+                                <p>publishedAt:{{item.get("publishedAt")}}</p>
+                            </div>
+                        </a>         
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+            <hr>
+            <!-- -------sports-section-------->
+            <section id="sports" class="sports-section">
+                <div>      
+                    <h1 class="heding">------------Sports-----------</h1>
+                    <!-- i am using jinja2 templetes for genrating html content -->
+                    <div class="news_container">
+                        {% for item in sports_news %}
+                        <a href="{{item.get('url')}}">
+                            <div class="content">
+                                <h3>{{item.get("title")}}</h3>
+                                <br>
+                                <p>{{item.get("description")}}</p>
+                                <!-- <p>Content: {{item.get("content")}}</p> -->
+                                {% if item.get('urlToImage') is none %}
+                                    <img src="static/images/logo.png" alt="">
+                                {% else %}
+                                    <img src="{{item.get('urlToImage')}}" alt="">
+                                {% endif %} 
+                                <p>publishedAt:{{item.get("publishedAt")}}</p>
+                            </div>
+                        </a>         
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+            <hr>
+            <!-- ------technology-section--------->
+            <section id="technology" class="technology-section">
+                <div>      
+                    <h1 class="heding">------------Technology-----------</h1>
+                    <!-- i am using jinja2 templetes for genrating html content -->
+                    <div class="news_container">
+                        {% for item in technology_news %}
+                        <a href="{{item.get('url')}}">
+                            <div class="content">
+                                <h3>{{item.get("title")}}</h3>
+                                <br>
+                                <p>{{item.get("description")}}</p>
+                                <!-- <p>Content: {{item.get("content")}}</p> -->
+                                {% if item.get('urlToImage') is none %}
+                                    <img src="static/images/logo.png" alt="">
+                                {% else %}
+                                    <img src="{{item.get('urlToImage')}}" alt="">
+                                {% endif %} 
+                                <p>publishedAt:{{item.get("publishedAt")}}</p>
+                            </div>
+                        </a>         
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+        </div>
+        <hr>
+        <!-- ---------------------footer------------------------- -->
+        <footer class="footer">
+            <!-- i am using jinja2 templetes for genrating html content -->
+            <div class="footer-links">
+                <div>
+                    <ul class="footer-links">
+                    {% for item in current_news %}
+                        <li class="footer-content">
+                            <a href="{{ item.get('url') }}">{{ item.get("title") }}</a>
+                        </li>  
+                    {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </main>
+</body>
+</html>
