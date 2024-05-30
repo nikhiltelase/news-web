@@ -29,13 +29,13 @@
         <aside class="left-sidebar">
             <!-- top -->
             <div class="container">
-                <h1 class="heding">Top Headlines</h1>
+                <h1 class="heding">💚 Headlines 💚</h1>
                 <div>
                     <!-- i am using jinja2 templetes for genrating html content -->
                     <ul class="">
                     {% for item in current_news %}
                         <li class="sidebar-content">
-                            <a href="{{ item.get('url') }}">{{ item.get("title") }}</a>
+                            <a href="{{ item.get('url') }}">🟩 {{ item.get("title") }}</a>
                         </li>  
                     {% endfor %}
                     </ul>
@@ -43,13 +43,13 @@
             </div>
             <!-- Business -->
             <div class="">
-                <h1 class="heding">Business Headlines</h1>
+                <h1 class="heding">💚 Business 💚</h1>
                 <div>
                     <!-- i am using jinja2 templetes for genrating html content -->
                     <ul class="">
                     {% for item in business_news %}
                         <li class="sidebar-content">
-                            <a href="{{ item.get('url') }}">{{ item.get("title") }}</a>
+                            <a href="{{ item.get('url') }}">🟩 {{ item.get("title") }}</a>
                         </li>  
                     {% endfor %}
                     </ul>
@@ -57,13 +57,13 @@
             </div>
             <!-- Entertainment -->
             <div class="">
-                <h1 class="heding">Entertainment Headlines</h1>
+                <h1 class="heding">💚 Entertainment 💚</h1>
                 <div>
                     <!-- i am using jinja2 templetes for genrating html content -->
                     <ul class="">
                     {% for item in entertainment_news %}
                         <li class="sidebar-content">
-                            <a href="{{ item.get('url') }}">{{ item.get("title") }}</a>
+                            <a href="{{ item.get('url') }}">🟩 {{ item.get("title") }}</a>
                         </li>  
                     {% endfor %}
                     </ul>
@@ -71,13 +71,13 @@
             </div>
             <!-- health -->
             <div class="">
-                <h1 class="heding">Health Headlines</h1>
+                <h1 class="heding">💚 Health 💚</h1>
                 <div>
                     <!-- i am using jinja2 templetes for genrating html content -->
                     <ul class="">
                     {% for item in health_news %}
                         <li class="sidebar-content">
-                            <a href="{{ item.get('url') }}">{{ item.get("title") }}</a>
+                            <a href="{{ item.get('url') }}">🟩 {{ item.get("title") }}</a>
                         </li>  
                     {% endfor %}
                     </ul>
@@ -86,12 +86,12 @@
             <!-- science -->
             <div class="">
                 <!-- i am using jinja2 templetes for genrating html content -->
-                <h1 class="heding">Science Headlines</h1>
+                <h1 class="heding">💚 Science 💚</h1>
                 <div>
                     <ul class="">
                     {% for item in science_news %}
                         <li class="sidebar-content">
-                            <a href="{{ item.get('url') }}">{{ item.get("title") }}</a>
+                            <a href="{{ item.get('url') }}">🟩 {{ item.get("title") }}</a>
                         </li>  
                     {% endfor %}
                     </ul>
@@ -100,12 +100,12 @@
             <!-- sports -->
             <div class="">
                 <!-- i am using jinja2 templetes for genrating html content -->
-                <h1 class="heding">Sports Headlines</h1>
+                <h1 class="heding">💚 Sports 💚</h1>
                 <div>
                     <ul class="">
                     {% for item in sports_news %}
                         <li class="sidebar-content">
-                            <a href="{{ item.get('url') }}">{{ item.get("title") }}</a>
+                            <a href="{{ item.get('url') }}">🟩 {{ item.get("title") }}</a>
                         </li>  
                     {% endfor %}
                     </ul>
@@ -114,12 +114,12 @@
             <!-- technology -->
             <div class="">
                 <!-- i am using jinja2 templetes for genrating html content -->
-                <h1 class="heding">Technology Headlines</h1>
+                <h1 class="heding">💚 Technology 💚</h1>
                 <div>
                     <ul class="">
                     {% for item in technology_news %}
                         <li class="sidebar-content">
-                            <a href="{{ item.get('url') }}">{{ item.get("title") }}</a>
+                            <a href="{{ item.get('url') }}">🟩 {{ item.get("title") }}</a>
                         </li>  
                     {% endfor %}
                     </ul>
@@ -335,7 +335,7 @@
                     <ul class="footer-links">
                     {% for item in current_news %}
                         <li class="footer-content">
-                            <a href="{{ item.get('url') }}">{{ item.get("title") }}</a>
+                            <a href="{{ item.get('url') }}"> <br> 🟩 {{ item.get("title") }}</a>
                         </li>  
                     {% endfor %}
                     </ul>
